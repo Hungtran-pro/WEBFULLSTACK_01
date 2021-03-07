@@ -1,0 +1,48 @@
+.container {
+    background-image: url(https://images.unsplash.com/flagged/photo-1563248101-a975e9a18cc6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);
+    background-size: contain;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 auto;
+    background-color: #cccccc;
+    border: solid 1px black;
+}
+
+.story{
+    margin-top: 3vh;
+}
+
+.flexCol {
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    background-origin: border-box;
+    background-size: contain;
+    background-image: url(http://www.imgworlds.com/wp-content/uploads/2015/12/18-CONTACTUS-HEADER.jpg);
+}
+
+.item {
+    border: solid 2px black;
+    border-radius: 10px;
+    background-color: aquamarine;
+    width: 100px;
+    height: 150px;
+    margin: auto 5px;
+}
+
+.flexRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.card{
+    font-size: 30px;
+    padding: 30px 0;
+    margin: 15px 0;
+    background-color: white;
+    width: 30vw;
+    border-radius: 10px;
+    text-align: center;
+}
