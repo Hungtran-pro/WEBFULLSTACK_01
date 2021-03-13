@@ -1,0 +1,58 @@
+*{
+    font-family: "Gill Sans", sans-serif;
+}
+
+#loginForm {
+  align-items: center;
+  justify-content: center;
+}
+
+#login {
+  border-radius: 15px;
+  background-color: white;
+  margin: 10vh auto;
+  width: 80vh;
+  height: auto;
+}
+
+#title{
+    margin-top: 40px;
+    margin-bottom: 5px;
+    font-size: 29px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.flexRow{
+    display: flex;
+    flex-direction: row;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.textBox{
+    font-size: 20px;
+    width: 80%;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 8px 8px;
+    margin: 12px 0;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    border-bottom: 1px solid #d6ceb4;
+}
+
+.textBox:focus{
+    outline: none;
+}
+
+#boxCheck{
+    display: flex;
+    justify-content: flex-start;
+    width: 80%;
+}
