@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import "./Login.css";
+import { withRouter } from "react-router";
+import "./login.css";
 
-export default class Login extends Component {
+class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,6 +13,14 @@ export default class Login extends Component {
       ac: false,
     };
   }
+
+  handleRouter = (url) => {
+    this.props.history.push(url);
+  };
+
+  goToLogin = () => {
+    this.handleRouter("/Login");
+  };
 
   validateAccount() {
     let { userName } = this.state;
@@ -24,7 +33,25 @@ export default class Login extends Component {
       document.querySelector("#error").innerHTML =
         "You need to accept our terms and conditions";
     } else {
-      alert(`thank ${userName}`);
+      // alert(`thank ${userName}`);
+      // localStorage.setItem('user', this.state.userName);
+      // localStorage.setItem('pass', this.state.pass);
+      let user = JSON.parse(localStorage.getItem("user"));
+      if (user) {
+        user.push({
+          username: this.state.userName,
+          password: this.state.pass,
+        });
+        localStorage.setItem("user", JSON.stringify(user));
+      } else {
+        let newList = [];
+        newList.push({
+          username: this.state.userName,
+          password: this.state.pass,
+        });
+        localStorage.setItem("user", JSON.stringify(newList));
+      }
+      this.goToLogin();
     }
   }
 
@@ -84,7 +111,7 @@ export default class Login extends Component {
           <input
             className="textBox"
             type="password"
-            placeholder="Repeat your password"
+            placeholder="repeat your password"
             value={this.state.rePass}
             onChange={(event) => {
               this.setState({
@@ -92,6 +119,7 @@ export default class Login extends Component {
               });
             }}
           ></input>
+          <p id="error"></p>
           <div className="flexRow" id="boxCheck">
             <input
               type="checkBox"
@@ -105,9 +133,8 @@ export default class Login extends Component {
             ></input>
             <label for="ac">I agree to the terms and conditions</label>
           </div>
-          <p id="error"></p>
           <input
-            className="textBox"
+            className="submit-btn"
             type="submit"
             value="Sign up"
             onClick={() => {
@@ -120,3 +147,5 @@ export default class Login extends Component {
     );
   }
 }
+
+export default withRouter(Register);

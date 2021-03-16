@@ -1,47 +1,30 @@
 import React, { Component } from "react";
-import Post from "./Post";
+import { withRouter } from "react-router";
 
-export default class Main extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      classWeb: 48,
-      textWelcome : '',
-    };
-  }
+class Main extends Component {
+
+  // componentDidMount(){
+
+  // }
+
+  handleRouter = (url) => {
+    this.props.history.push(url);
+  };
+  goToLogin = () => {
+    this.handleRouter("/Login");
+  };
+  goToRegister = () => {
+    this.handleRouter("/Register");
+  };
 
   render() {
     return (
-      <div className="App">
-        <p>{this.state.classWeb}</p>
-        <p>{this.state.textWelcome}</p>
-        <button
-          onClick={() => {
-            this.setState({
-              classWeb: this.state.classWeb + 1,
-            });
-          }}
-        >
-          Plus
-        </button>
-        <button
-          onClick={() => {
-            this.setState({
-              classWeb: this.state.classWeb - 1,
-            });
-          }}
-        >
-          Minus
-        </button>
-        <input type="text" onChange={(event) => {
-            this.setState({
-                textWelcome: event.target.value
-            })
-        }}></input>
-        <p>Hello World;</p>
-        <Post name={"hung"} age={20} />
-        <Post name={"tran"} age={10} />
+      <div>
+        <button onClick={this.goToLogin}>Login</button>
+        <button onClick={this.goToRegister}>Register</button>
       </div>
     );
   }
 }
+
+export default withRouter(Main);
