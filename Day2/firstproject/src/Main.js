@@ -9,6 +9,7 @@ class Main extends Component {
 
   handleRouter = (url) => {
     this.props.history.push(url);
+    console.log(this.props);
   };
   goToLogin = () => {
     this.handleRouter("/Login");

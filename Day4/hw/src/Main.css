@@ -1,0 +1,31 @@
+.flexCol {
+    display: flex;
+    flex-direction: column;
+}
+
+.flexRow {
+    display: flex;
+    flex-direction: row;
+}
+
+#title{
+    margin-top: 30px;
+    text-align: center;
+    font-size: 35px;
+}
+
+#btn{
+    margin: 10px auto;
+}
+
+#btn button{
+    height: 40px;
+    width: 100px;
+    border-style: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#btn button:hover{
+    background-color: bisque;
+}
